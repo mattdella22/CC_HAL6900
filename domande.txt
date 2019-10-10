@@ -1,0 +1,21 @@
+----------------------------
+**index.html****************
+----------------------------
+
+Posso eliminare senza problemi la versione non minificata di p5.js (p5.min.js è comunque caricata)? Quali sono gli svantaggi 
+
+
+----------------------------
+**main.js****************
+----------------------------
+
+Recuperare i valori x e y dell'oggetto "nose" funziona solo se "nose.x" e "nose.y" sono inseriti nella condizione "if (nose){...}"... Come mai? 
+
+Riflettere il video (per averlo "specchiato") incasina gli if statements per controlloare in quale quadrante si trova nose. Quale è il modo migliore per procedere? Dove i pop/push?
+
+
+----------------------------
+**GENERAL****************
+----------------------------
+
+Github? Come posso "salvare" uno stato del progetto senza dover fare copia-incolla tutte le volte?

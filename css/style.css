@@ -1,0 +1,45 @@
+* {
+    font-family: sans-serif;
+}
+
+html, body {
+	background-color: white;
+	margin:0;
+    padding: 0;
+}
+
+canvas{
+	display: block;
+}
+
+.disable-scroll{
+    top:0;
+    overflow: hidden;
+    position: fixed;
+    /*touch-action: none;*/
+}
+
+.disable-select {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; 	/* iOS Safari */
+    -webkit-user-select: none; 		/* Safari */
+    -khtml-user-select: none; 		/* Konqueror HTML */
+    -moz-user-select: none; 		/* Firefox */
+    -ms-user-select: none; 			/* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.disable-pointer {
+    pointer-events: none;
+}
+
+.debug{
+    font-size: 0.75em;
+    position: absolute;
+    left:30px;
+    top:30px;
+    background-color: yellow;
+    color: black;
+    display: block;
+    font-family: monospace;
+}
