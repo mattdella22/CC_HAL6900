@@ -71,6 +71,8 @@ function draw() {
    //per riflettere l'immagine a specchio "congelo" con push e pop. diventa però un problema per checkare la posizione del naso...
     //scale(-1,1)
     //translate(-video.width, 0)
+    translate(video.width, 0)
+    scale(-1,1)
     image(video, 0, 0, width, height)
 
     if (nose) {
@@ -87,18 +89,19 @@ function draw() {
                 strokeWeight(1)
                 rect(cellWidth, cellHeight, width / cols, height / rows)
 
-                if ((nose.x > i * (width / cols) && nose.x < (i + 1) * (width / cols)) && (nose.y > j * (height / rows) && nose.y < (j + 1) * (height / rows))) {
+                if ((nose.x > i * (width / cols) && nose.x < (i + 1) * (width / cols)) && (nose.y > j * (height / rows) && nose.y < (j + 1) * (height / rows))) {//posso sostituire con le variabili create prima
                     console.log("siamo nella cella: " + i + ", " + j)
-                    image(imgs[i + j + 2 * j], 0, 0)//2 equivale alla numero di colonne del 2D array... mate? 
+                    //matrice alterata... Riposiziona l'img
+                    push()
+                    scale(1.3)
+                    translate(0,0)
+                    image(imgs[i + j + 2 * j], 0, 0)//2 equivale alla numero di colonne del 2D array... mate?
+                    pop() 
                 }
             }
         }
 
-
-        //tutte le condizioni per le celle, identificare pattern e mettere in un for
-
     }
-    //console.log(nose.x)
 
 }
 
