@@ -1,8 +1,8 @@
+console.log("asd")
 let rows = 3
-let cols = 3
+let cols = 5
 
 let imgs = []
-let imgGrid = []
 
 let video
 let poseNet
@@ -13,8 +13,8 @@ let nose
 function preload() {
 
     //precarico le immagini in un'array
-    for (i = 0; i < 9; i++) {
-        imgs[i] = loadImage("data/face_" + i + ".jpg")
+    for (i = 0; i < 15; i++) {
+        imgs[i] = loadImage("data/5x3/face_" + i + ".jpg")
     }
 }
 
@@ -39,35 +39,12 @@ function setup() {
     video.size(width, height)
     video.hide()
     let poseNet = ml5.poseNet(video, modelReady)
-    poseNet.on('pose', gotPoses)
+    poseNet.on('pose', gotPoses)        
 
-
-    //metto le immagini dell'array in una "griglia"... Percorro l'array con un'indice
-    let index = 0
-    for (let i = 0; i < cols; i++) {
-        imgGrid[i] = [] //cruciale!! Questo crea gli array innestati!
-        for (let j = 0; j < rows; j++) {
-            imgGrid[i][j] = imgs[index]
-            index = index + 1
-        }
-    }
 
 }
 
 function draw() {
-
-    /*
-    //Presento le immagini in una griglia
-    for (let i = 0; i < cols; i++) {
-      for (let j = 0; j < rows; j++) {
-        let x = i * 50
-        let y = j * 50
-        image(imgGrid[i][j],x,y,50,50)
-      }
-    }
-    */
-
-
    //per riflettere l'immagine a specchio "congelo" con push e pop. diventa però un problema per checkare la posizione del naso...
     //scale(-1,1)
     //translate(-video.width, 0)
@@ -82,8 +59,8 @@ function draw() {
 
         for (let i = 0; i < cols; i++) {
             for (let j = 0; j < rows; j++) {
-                let cellWidth = i * (width / cols) //not sure
-                let cellHeight = j * (height / rows) //not sure
+                let cellWidth = i * (width / cols)
+                let cellHeight = j * (height / rows)
                 noFill()
                 stroke(255, 0, 0)
                 strokeWeight(1)
@@ -91,11 +68,10 @@ function draw() {
 
                 if ((nose.x > i * (width / cols) && nose.x < (i + 1) * (width / cols)) && (nose.y > j * (height / rows) && nose.y < (j + 1) * (height / rows))) {//posso sostituire con le variabili create prima
                     console.log("siamo nella cella: " + i + ", " + j)
-                    //matrice alterata... Riposiziona l'img
                     push()
-                    scale(1.3)
+                    scale(0.2)
                     translate(0,0)
-                    image(imgs[i + j + 2 * j], 0, 0)//2 equivale alla numero di colonne del 2D array... mate?
+                    image(imgs[i + j + cols-1 * j], 0, 0)//equivale alla numero di colonne del 2D array... mate?
                     pop() 
                 }
             }
