@@ -71,7 +71,7 @@ function draw() {
                     push()
                     scale(0.2)
                     translate(0,0)
-                    image(imgs[i + j + cols-1 * j], 0, 0)//equivale alla numero di colonne del 2D array... mate?
+                    image(imgs[i + j + 4 * j], 0, 0)//equivale alla numero di colonne del 2D array... mate?
                     pop() 
                 }
             }
