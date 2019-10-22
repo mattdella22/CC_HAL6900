@@ -1,5 +1,5 @@
 let rows = 1
-let cols = 16
+let cols = 14
 
 let imgs = []
 
@@ -12,8 +12,8 @@ let nose
 function preload() {
 
     //precarico le immagini in un'array
-    for (i = 0; i < 17; i++) {
-        imgs[i] = loadImage("data/desi2/face_" + i + ".png")
+    for (i = 0; i < 14; i++) {
+        imgs[i] = loadImage("data/desi/face_" + i + ".png")
     }
 }
 
@@ -31,6 +31,7 @@ function setup() {
     }
     //
     */
+
     createCanvas(windowWidth, windowHeight);
     video = createCapture(VIDEO, function(e){
         let w = 256
@@ -38,7 +39,6 @@ function setup() {
     })
     console.log(video.width, video.height)
     video.hide()
-
 
     //video.hide()
     let poseNet = ml5.poseNet(video, modelReady)
@@ -100,4 +100,3 @@ function modelReady() {
 function windowResized(){
     resizeCanvas(windowWidth, windowHeight)
 }
-
