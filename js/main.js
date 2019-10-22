@@ -31,7 +31,6 @@ function setup() {
     }
     //
     */
-
     createCanvas(windowWidth, windowHeight);
     video = createCapture(VIDEO, function(e){
         let w = 256
@@ -39,6 +38,7 @@ function setup() {
     })
     console.log(video.width, video.height)
     video.hide()
+
 
     //video.hide()
     let poseNet = ml5.poseNet(video, modelReady)
@@ -100,3 +100,4 @@ function modelReady() {
 function windowResized(){
     resizeCanvas(windowWidth, windowHeight)
 }
+
