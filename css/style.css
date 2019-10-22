@@ -3,13 +3,18 @@
 }
 
 html, body {
-	background-color: white;
-	margin:0;
+    background-color: white;
+    margin:0;
     padding: 0;
 }
 
 canvas{
-	display: block;
+    display: block;
+}
+
+video {
+    display: hidden;
+    position: fixed;
 }
 
 .disable-scroll{
@@ -21,11 +26,11 @@ canvas{
 
 .disable-select {
     -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none; 	/* iOS Safari */
-    -webkit-user-select: none; 		/* Safari */
-    -khtml-user-select: none; 		/* Konqueror HTML */
-    -moz-user-select: none; 		/* Firefox */
-    -ms-user-select: none; 			/* Internet Explorer/Edge */
+    -webkit-touch-callout: none;    /* iOS Safari */
+    -webkit-user-select: none;      /* Safari */
+    -khtml-user-select: none;       /* Konqueror HTML */
+    -moz-user-select: none;         /* Firefox */
+    -ms-user-select: none;          /* Internet Explorer/Edge */
     user-select: none;
 }
 
