@@ -1,5 +1,5 @@
 let rows = 1
-let cols = 16
+let cols = 14
 
 let imgs = []
 
@@ -12,8 +12,8 @@ let nose
 function preload() {
 
     //precarico le immagini in un'array
-    for (i = 0; i < 17; i++) {
-        imgs[i] = loadImage("data/desi2/face_" + i + ".png")
+    for (i = 0; i < 14; i++) {
+        imgs[i] = loadImage("data/desi/face_" + i + ".png")
     }
 }
 
